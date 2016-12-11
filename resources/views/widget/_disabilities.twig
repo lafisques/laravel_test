@@ -1,0 +1,114 @@
+<script type="text/javascript">
+
+    var pageFontSize = 0;
+    var pageScale = 1;
+
+    function _changeElementTextSize(elem, mod) {
+        $(elem).css('font-size', (parseFloat($(elem).css('font-size')) + mod) + 'px');
+    }
+    function incTextSize() {
+        _changeElementTextSize('p', 2);
+        _changeElementTextSize('h1', 3);
+        _changeElementTextSize('h2', 3);
+    }
+    function decTextSize() {
+        _changeElementTextSize('p', -2);
+        _changeElementTextSize('h1', -3);
+        _changeElementTextSize('h2', -3);
+    }
+    function incScale() {
+
+    }
+    function decScale() {
+
+    }
+    function setScale() {
+
+    }
+    function setColorScheme(colorScheme) {
+        switch(colorScheme) {
+            case 'HIGH-CONTRAST':
+                $('body').addClass('high-contrast');
+                break;
+            case 'NORMAL':
+                $('body').removeClass('high-contrast black-white');
+                break;
+            case 'BLACK-WHITE':
+                $('body').addClass('black-white');
+                break;
+        }
+    }
+    function setImagesMode(mode) {
+        switch(mode) {
+            case 'BLWH': $('img').removeClass('non-display').addClass('black-white'); break;
+            case 'ORIG': $('img').removeClass('black-white non-display'); break;
+            case 'NONE': $('img').removeClass('black-white').addClass('non-display'); break;
+        }
+    }
+</script>
+
+<style type="text/css">
+    p {
+        text-align: justify;
+    }
+    .widget-block {
+        margin: 0 0 20px 0;
+    }
+    img {
+        filter: none;
+    }
+    img.black-white {
+        filter: grayscale(100%);
+    }
+    img.non-display {
+        display: none;
+    }
+    body.high-contrast {
+        background-color: #000000;
+        color: #ffffff;
+    }
+    body.high-contrast p {
+        color: #ffffff;
+    }
+    body.high-contrast a {}
+    body.black-white {
+        filter: grayscale(100%);
+    }
+</style>
+
+<div class="col-md-12 widget-block">
+    <div class="col-md-2">
+        Font size:<br />
+        <div class="btn-group btn-group-sm" role="group" aria-label="...">
+            <button type="button" class="btn btn-default" onclick="decTextSize(); return false;">A-</button>
+            <button type="button" class="btn btn-default" onclick="incTextSize(); return false;">A+</button>
+        </div>
+    </div>
+    <div class="col-md-1">
+        Scale:<br />
+        <div class="btn-group btn-group-sm" role="group" aria-label="...">
+            <button type="button" class="btn btn-default">-</button>
+            <button type="button" class="btn btn-default">+</button>
+        </div>
+    </div>
+    <div class="col-md-4">
+        Color scheme:<br />
+        <div class="btn-group btn-group-sm" role="group" aria-label="...">
+            <button type="button" class="btn btn-default" onclick="setColorScheme('NORMAL'); return false;">Обычная</button>
+            <button type="button" class="btn btn-default" onclick="setColorScheme('BLACK-WHITE'); return false;">Черно-белая</button>
+            <button type="button" class="btn btn-default" onclick="setColorScheme('HIGH-CONTRAST'); return false;">Контрастная</button>
+        </div>
+    </div>
+    <div class="col-md-4">
+        Images:<br />
+        <div class="btn-group btn-group-sm" role="group" aria-label="...">
+            <button type="button" class="btn btn-default" onclick="setImagesMode('NONE'); return false;">Выкл</button>
+            <button type="button" class="btn btn-default" onclick="setImagesMode('BLWH'); return false;">Черно-белые</button>
+            <button type="button" class="btn btn-default" onclick="setImagesMode('ORIG'); return false;">Цветные</button>
+        </div>
+    </div>
+    <div class="col-md-1" role="group" aria-label="...">
+        <br />
+        <button type="button" class="btn btn-sm btn-default">Сбросить</button>
+    </div>
+</div>

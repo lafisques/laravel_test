@@ -11,11 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    //return view('welcome');
-    return View::make('page');
-});
-
-Route::any('/test', function() {
-	return View::make('welcome');
-});
+Route::any('/', function () { return View::make('page'); });
+Route::any('/page/{id}', ['uses' => 'PageController@view']);

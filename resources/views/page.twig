@@ -1,118 +1,13 @@
 {% extends "layout" %}
 {% block content %}
-
-<script>
-
-var pageFontSize = 0;
-var pageScale = 1;
-
-function incTextSize() {
-	$('p').addClass();
-}
-function decTextSize() {
-	$('p').removeClass();
-}
-function incScale() {
-	$('')
-}
-function decScale() {
-
-}
-function setScale() {
-
-}
-function setColorScheme(colorScheme) {
-	switch(colorScheme) {
-		case 'HIGH-CONTRAST': 
-			$('body').addClass('high-contrast');
-			break;
-		case 'NORMAL': 
-			$('body').removeClass('high-contrast black-white');
-			break;
-		case 'BLACK-WHITE': 
-			$('body').addClass('black-white');
-			break;
-	}
-}
-function setImagesMode(mode) {
-	switch(mode) {
-		case 'BLWH': $('img').removeClass('non-display').addClass('black-white'); break;
-		case 'ORIG': $('img').removeClass('black-white non-display'); break;
-		case 'NONE': $('img').removeClass('black-white').addClass('non-display'); break;
-	}
-}
-</script>
-
-<style type="text/css">
-	p {
-		text-align: justify;
-	}
-	.widget-block {
-		margin: 0 0 20px 0;
-	}
-	img {
-		filter: none;
-	}
-	img.black-white {
-		filter: grayscale(100%);
-	}
-	img.non-display {
-		display: none;
-	}
-	body.high-contrast {
-		background-color: #000000;
-		color: #ffffff;
-	}
-	body.high-contrast p {
-		color: #ffffff;
-	}
-	body.high-contrast a {}
-	body.black-white {
-		filter: grayscale(100%);
-	}
-</style>
-
-<div class="col-md-12 widget-block">
-	<div class="col-md-2">
-		Font size:<br />
-		<div class="btn-group btn-group-sm" role="group" aria-label="...">
-			<button type="button" class="btn btn-default">A-</button>
-			<button type="button" class="btn btn-default">A+</button>
-		</div>
-	</div>
-	<div class="col-md-1">
-		Scale:<br />
-		<div class="btn-group btn-group-sm" role="group" aria-label="...">
-			<button type="button" class="btn btn-default">-</button>
-			<button type="button" class="btn btn-default">+</button>
-		</div>
-	</div>
-	<div class="col-md-4">
-		Color scheme:<br />
-		<div class="btn-group btn-group-sm" role="group" aria-label="...">
-			<button type="button" class="btn btn-default" onclick="setColorScheme('NORMAL'); return false;">Обычная</button>
-			<button type="button" class="btn btn-default" onclick="setColorScheme('BLACK-WHITE'); return false;">Черно-белая</button>
-			<button type="button" class="btn btn-default" onclick="setColorScheme('HIGH-CONTRAST'); return false;">Контрастная</button>
-		</div>
-	</div>
-	<div class="col-md-4">
-		Images:<br />
-		<div class="btn-group btn-group-sm" role="group" aria-label="...">
-			<button type="button" class="btn btn-default" onclick="setImagesMode('NONE'); return false;">Выкл</button>
-			<button type="button" class="btn btn-default" onclick="setImagesMode('BLWH'); return false;">Черно-белые</button>
-			<button type="button" class="btn btn-default" onclick="setImagesMode('ORIG'); return false;">Цветные</button>
-		</div>
-	</div>
-	<div class="col-md-1" role="group" aria-label="...">
-		<br />	
-		<button type="button" class="btn btn-sm btn-default">Сбросить</button>
-	</div>
-</div>
-<img src="https://images-na.ssl-images-amazon.com/images/I/41%2BpJNrGujL._SX359_BO1,204,203,200_.jpg" style="float: left; margin: 0 10px 5px 0; width: 100px;" />
-<p>Nam ut ante id est congue imperdiet sollicitudin eget lorem. Nunc ut fringilla neque. Nulla aliquam sapien non urna faucibus elementum. In quis nisi vitae erat interdum imperdiet. Nunc nec placerat lectus. Vestibulum semper arcu vel urna vehicula porta. Sed sed lectus sit amet nunc malesuada vehicula nec eget purus. Pellentesque sed lacinia est. Nunc lorem orci, facilisis sed bibendum vel, pharetra non metus.</p>
-<p>Donec egestas arcu vitae eros fermentum placerat. Sed condimentum dui turpis, in accumsan nisl rutrum eu. Nam quis orci ut odio vehicula cursus. Suspendisse varius ornare ex. Cras id lacus non est ullamcorper pretium tincidunt vitae urna. Quisque a sapien nulla. Quisque ullamcorper odio eget magna interdum, sed aliquet orci sagittis. In mollis eget arcu eu pretium.</p>
-<p>Fusce non sem in nibh lobortis vestibulum. Nunc efficitur vitae nibh eu ullamcorper. Donec a lorem egestas, aliquam neque ac, mollis metus. Nullam lobortis augue elit, nec feugiat lectus blandit nec. Aliquam rhoncus in lorem at accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent turpis sapien, rutrum in justo tincidunt, interdum iaculis leo. In lobortis volutpat nisi id fringilla. Ut aliquam ut purus in lobortis. Ut vel pellentesque ipsum. In vulputate sapien ac sollicitudin posuere.</p>
-<img src="https://images-na.ssl-images-amazon.com/images/I/51xbOwf5o2L._AC_US160_.jpg" style="float: right; margin: 0 0 5px 10px; width: 100px;" />
-<p>Fusce vitae imperdiet purus. Aliquam facilisis lectus eget dapibus faucibus. Donec nec dapibus nisl. Curabitur elementum venenatis ligula a bibendum. Fusce vitae venenatis purus. Aliquam sed ultricies ante. Vestibulum at dignissim augue. Sed maximus eros velit, sed rhoncus ligula vulputate id. Sed condimentum molestie sem et elementum. Phasellus gravida purus sem, tincidunt fermentum lorem pharetra et. Vestibulum quis velit lorem. Pellentesque eleifend elit euismod orci faucibus porttitor.</p>
-<p>Donec lobortis ex sem, egestas tincidunt dolor elementum in. Sed ut sapien sed neque volutpat faucibus. Ut vehicula convallis quam, nec aliquam turpis vulputate eget. Donec interdum, lacus vel molestie malesuada, lorem leo iaculis diam, vitae imperdiet purus justo eu ipsum. Sed tincidunt felis vitae lectus feugiat, vel efficitur ex ornare. Nulla dapibus, erat at auctor pellentesque, ex odio porta arcu, sed ultrices risus augue vel sem. In nec ornare ipsum. Phasellus et hendrerit tellus.</p>
+{% include 'widget._disabilities' %}
+    <h1>Lorem ipsum dolor sit amet</h1>
+    <img src="https://images-na.ssl-images-amazon.com/images/I/41%2BpJNrGujL._SX359_BO1,204,203,200_.jpg" style="float: left; margin: 0 10px 5px 0; width: 100px;" />
+    <p>Nam ut ante id est congue imperdiet sollicitudin eget lorem. Nunc ut fringilla neque. Nulla aliquam sapien non urna faucibus elementum. In quis nisi vitae erat interdum imperdiet. Nunc nec placerat lectus. Vestibulum semper arcu vel urna vehicula porta. Sed sed lectus sit amet nunc malesuada vehicula nec eget purus. Pellentesque sed lacinia est. Nunc lorem orci, facilisis sed bibendum vel, pharetra non metus.</p>
+    <p>Donec egestas arcu vitae eros fermentum placerat. Sed condimentum dui turpis, in accumsan nisl rutrum eu. Nam quis orci ut odio vehicula cursus. Suspendisse varius ornare ex. Cras id lacus non est ullamcorper pretium tincidunt vitae urna. Quisque a sapien nulla. Quisque ullamcorper odio eget magna interdum, sed aliquet orci sagittis. In mollis eget arcu eu pretium.</p>
+    <p>Fusce non sem in nibh lobortis vestibulum. Nunc efficitur vitae nibh eu ullamcorper. Donec a lorem egestas, aliquam neque ac, mollis metus. Nullam lobortis augue elit, nec feugiat lectus blandit nec. Aliquam rhoncus in lorem at accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent turpis sapien, rutrum in justo tincidunt, interdum iaculis leo. In lobortis volutpat nisi id fringilla. Ut aliquam ut purus in lobortis. Ut vel pellentesque ipsum. In vulputate sapien ac sollicitudin posuere.</p>
+    <h2>Sed condimentum dui turpis</h2>
+    <img src="https://images-na.ssl-images-amazon.com/images/I/51xbOwf5o2L._AC_US160_.jpg" style="float: right; margin: 0 0 5px 10px; width: 100px;" />
+    <p>Fusce vitae imperdiet purus. Aliquam facilisis lectus eget dapibus faucibus. Donec nec dapibus nisl. Curabitur elementum venenatis ligula a bibendum. Fusce vitae venenatis purus. Aliquam sed ultricies ante. Vestibulum at dignissim augue. Sed maximus eros velit, sed rhoncus ligula vulputate id. Sed condimentum molestie sem et elementum. Phasellus gravida purus sem, tincidunt fermentum lorem pharetra et. Vestibulum quis velit lorem. Pellentesque eleifend elit euismod orci faucibus porttitor.</p>
+    <p>Donec lobortis ex sem, egestas tincidunt dolor elementum in. Sed ut sapien sed neque volutpat faucibus. Ut vehicula convallis quam, nec aliquam turpis vulputate eget. Donec interdum, lacus vel molestie malesuada, lorem leo iaculis diam, vitae imperdiet purus justo eu ipsum. Sed tincidunt felis vitae lectus feugiat, vel efficitur ex ornare. Nulla dapibus, erat at auctor pellentesque, ex odio porta arcu, sed ultrices risus augue vel sem. In nec ornare ipsum. Phasellus et hendrerit tellus.</p>
 {% endblock %}
